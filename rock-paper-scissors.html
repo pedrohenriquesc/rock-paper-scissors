@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title> Rock, Paper, Scisorcrs </title>
+	</head>
+	<body>
+		<button id = "bttGame" onclick = "game()"> Start Game </button>
+		<script>
+			function game(){
+				let playerScore = 0;
+				let computerScore = 0; 
+				function playRound(playerSelection,computerSelection){
+						switch (playerSelection.toLowerCase()){
+							case "rock":
+								if (computerSelection == "scissors"){
+									return playerScore++;
+									break;
+								}
+								else { 
+									return computerScore++;
+									break;
+								}
+							case "paper":  
+								if (computerSelection == "scissors"){
+									return computerScore++;
+									break;
+								}
+								else { 
+									return playerScore++;
+									break;
+								}
+							case "scissors": 
+								if (computerSelection == "rock"){
+									return computerScore++;
+									break;
+								}
+								else { 
+									return playerScore++;
+									break;
+								}
+						}
+					}
+				for ( i = 0; i < 5; i++) {
+					let playerSelection = prompt("Rock, paper or scissors?");
+					function computerSelection(){
+						let choice = [
+							"Rock",
+							"Paper",
+							"Scissors"
+						];
+						let randomChoice = choice[Math.floor(Math.random()*choice.length)];
+						return randomChoice.toLowerCase();
+					}
+					playRound(playerSelection,computerSelection());
+				}
+				if ( playerScore > computerScore){
+					console.log("You won! Final score"+ " " + " " +  playerScore + " " + "to" + " " + computerScore);
+				}
+				else{
+					console.log("You lost! Final score"+ " " + " " +  playerScore + " " + "to" + " " + computerScore);
+				}
+				
+			}
+		</script>
+	</body>
+</html>

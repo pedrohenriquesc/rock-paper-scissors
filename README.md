@@ -1,0 +1,1 @@
+This Project is for educational purposes. It is part of the Odin Curriculum and it's goal is to create a rock-paper-scissors game that is played from the console. 
